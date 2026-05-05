@@ -1,0 +1,15 @@
+package components
+
+import "goth-countries/models"
+import "strconv"
+
+templ CountryDetail(country models.Country) {
+    @Base(country.Name) {
+        <div class="country-detail">
+            // <h2>{country.Name}</h2>
+            <p><strong>Capital:</strong> {country.Capital}</p>
+            <p><strong>Population:</strong> {strconv.Itoa(country.Population)}</p>
+            <p>{country.Description}</p>
+        </div>
+    }
+}
